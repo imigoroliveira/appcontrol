@@ -30,7 +30,7 @@ export default function App() {
   async function handleBarCodeScanned(result: BarcodeScanningResult) {
     const data = result.data.trim();
     setScannedData(data);
-    setIsNumeric(/^\d+$/.test(data)); // true if it's a number
+    setIsNumeric(/^\d+$/.test(data));
 
     if (isNumeric) {
       try {
@@ -62,7 +62,7 @@ export default function App() {
       >
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Trocar câmera</Text>
+            <Text style={styles.text}>Scanear QR Code</Text>
           </TouchableOpacity>
         </View>
       </CameraView>
