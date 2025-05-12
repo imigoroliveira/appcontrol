@@ -28,7 +28,7 @@ export default function App() {
   function handleBarCodeScanned(result: BarcodeScanningResult) {
     const data = result.data.trim();
     setScannedData(data);
-    setIsNumeric(/^\d+$/.test(data)); // true se for número
+    setIsNumeric(/^\d+$/.test(data));
   }
 
   return (
