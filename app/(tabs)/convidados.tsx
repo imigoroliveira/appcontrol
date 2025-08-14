@@ -24,7 +24,7 @@ export default function ConvidadosScreen() {
   const fetchConvidados = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://192.168.1.73:5001/convidados');
+      const response = await fetch('https://appcontrol-backend.onrender.com/guests');
       if (!response.ok) {
         throw new Error('Erro ao carregar convidados');
       }
@@ -48,7 +48,7 @@ export default function ConvidadosScreen() {
   const handleDelete = async (id: number) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://192.168.1.73:5001/convidados/${id}`, {
+      const response = await fetch(`https://appcontrol-backend.onrender.com/guests${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -67,8 +67,8 @@ export default function ConvidadosScreen() {
     try {
       setLoading(true);
       const url = convidado.id
-        ? `http://192.168.1.73:5001/convidados/${convidado.id}`
-        : 'http://192.168.1.73:5001/convidados';
+        ? `https://appcontrol-backend.onrender.com/guests${convidado.id}`
+        : 'https://appcontrol-backend.onrender.com/guests';
       
       const method = convidado.id ? 'PUT' : 'POST';
       
